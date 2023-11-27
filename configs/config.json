@@ -1,0 +1,412 @@
+{
+    "stage_duration": 30,
+    "stage_1": {
+        "stage" : {
+            "stage_background": "./assets/graphics/cemetery_hd.jpg",
+            "stage_music": "./assets/sounds/halloween.wav",
+            "stage_win": "assets/sounds/game_win.mp3",
+            "platform_floor": "./assets/graphics/piso_roca.png",
+            "max_enemies_amount": 3,
+            "lifes_amount" : 3,
+            "timer": 100 
+        },
+        "platforms": [
+            {
+                "x": 0,
+                "y": 500,
+                "width": 800,
+                "height": 40
+            },
+            
+            {
+                "x": 280,
+                "y": 400,
+                "width": 240,
+                "height": 40
+            },
+            {
+                "x": 180,
+                "y": 300,
+                "width": 200,
+                "height": 40
+            },
+            {
+                "x": 380,
+                "y": 400,
+                "width": 400,
+                "height": 40
+            },
+            {
+                "x": 380,
+                "y": 200,
+                "width": 300,
+                "height": 40
+            }
+        ],
+        "spikes":[
+            {
+                "x": 200,
+                "y": 500
+            },
+            {
+                "x": 250,
+                "y": 500
+            },
+            {
+                "x": 350,
+                "y": 300
+            }
+        ],
+        "player": {
+            "player_idle_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Idle_4.png",
+            "idle_cols": 4,
+            "idle_rows": 1,
+            "player_walk_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Walk_6.png",
+            "walk_cols": 6,
+            "walk_rows": 1,
+            "player_jump_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Jump_8.png",
+            "jump_cols": 8,
+            "jump_rows": 1,
+            "player_attack_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Attack2_6.png",
+            "attack_cols": 6,
+            "attack_rows": 1,
+            "player_death_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Death_8.png",
+            "death_cols": 8,
+            "death_rows": 1,
+            "jump_power": 5,
+            "gravity": 5,
+            "walk_speed": 2,
+            "run_speed": 2,
+            "aspect_ratio" : 2,
+            "lifes": 3,
+            "frame_rate": 200,
+            "shoot_frames": 1000,
+            "fire_cooldown" : 600
+        },
+        "enemy":{
+            "enemy_walk_animation": "./assets/graphics/walk.png",
+            "walk_cols": 12,
+            "walk_rows": 1,
+            "enemy_fall_animation": "./assets/graphics/fall.png",
+            "fall_cols": 1,
+            "fall_rows": 1,
+            "aspect_ratio" : 2,
+            "enemy_max_speed": 5,
+            "enemy_min_speed": 1,
+            "shoot_percentage": 5,
+            "frame_rate": 100,
+            "gravity": 5,
+            "puntaje": 500
+        },
+        "objetos":{
+            "apple_animation": "./assets/graphics/Apple.png",
+            "animation_cols": 17,
+            "animation_rows": 1,
+            "aspect_ratio": 2,
+            "frame_rate": 100,
+            "puntaje": 100,
+            "coords":[
+                {
+                    "x": 140,
+                    "y": 500
+                },
+                {
+                    "x": 300,
+                    "y": 500
+                },
+                {
+                    "x": 700,
+                    "y": 500
+                },
+                {
+                    "x": 350,
+                    "y": 300
+                }
+            ]
+        },
+        "vidas":{
+            "corazon": "assets/graphics/Apple.png",
+            "aspect_ratio": 2,
+            "frame_rate": 100,
+            "life_value":1
+        }
+    },
+    "stage_2": {
+        "stage" : {
+            "stage_background": "./assets/graphics/jungle_background.jpg",
+            "stage_music": "./assets/sounds/jungle.mp3",
+            "stage_win": "./assets/sounds/game_win.mp3",
+            "platform_floor": "./assets/graphics/piso.png",
+            "max_enemies_amount": 5,
+            "lifes_amount" : 3,
+            "timer": 100 
+        },
+        "platforms": [
+            {
+                "x": 0,
+                "y": 500,
+                "width": 800,
+                "height": 40
+            },
+            
+            {
+                "x": 50,
+                "y": 400,
+                "width": 150,
+                "height": 40
+            },
+            {
+                "x": 50,
+                "y": 300,
+                "width": 150,
+                "height": 40
+            },
+            {
+                "x": 50,
+                "y": 200,
+                "width": 150,
+                "height": 40
+            },
+            {
+                "x": 350,
+                "y": 400,
+                "width": 150,
+                "height": 40
+            },
+            {
+                "x": 380,
+                "y": 400,
+                "width": 400,
+                "height": 40
+            },
+            {
+                "x": 300,
+                "y": 200,
+                "width": 300,
+                "height": 40
+            }
+        ],
+        "spikes":[
+            {
+                "x": 50,
+                "y": 500
+            },
+            {
+                "x": 400,
+                "y": 320
+            },
+            {
+                "x": 3100,
+                "y": 320
+            }
+        ],
+        "player": {
+            "player_idle_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Idle_4.png",
+            "idle_cols": 4,
+            "idle_rows": 1,
+            "player_walk_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Walk_6.png",
+            "walk_cols": 6,
+            "walk_rows": 1,
+            "player_jump_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Jump_8.png",
+            "jump_cols": 8,
+            "jump_rows": 1,
+            "player_attack_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Attack2_6.png",
+            "attack_cols": 6,
+            "attack_rows": 1,
+            "player_death_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Death_8.png",
+            "death_cols": 8,
+            "death_rows": 1,
+            "jump_power": 5,
+            "gravity": 5,
+            "walk_speed": 2,
+            "run_speed": 2,
+            "aspect_ratio" : 2,
+            "lifes": 3,
+            "frame_rate": 200,
+            "shoot_frames": 1000,
+            "fire_cooldown" : 600
+        },
+        "enemy":{
+            "enemy_walk_animation": "./assets/graphics/jungleman_Run.png",
+            "walk_cols": 12,
+            "walk_rows": 1,
+            "enemy_fall_animation": "./assets/graphics/jungleman_Fall.png",
+            "fall_cols": 1,
+            "fall_rows": 1,
+            "aspect_ratio" : 2,
+            "enemy_max_speed": 5,
+            "enemy_min_speed": 1,
+            "shoot_percentage": 5,
+            "frame_rate": 100,
+            "gravity": 5,
+            "puntaje": 700
+        },
+        "objetos":{
+            "apple_animation": "./assets/graphics/Apple.png",
+            "animation_cols": 17,
+            "animation_rows": 1,
+            "aspect_ratio": 2,
+            "frame_rate": 100,
+            "puntaje": 100,
+            "coords":[
+                {
+                    "x": 140,
+                    "y": 500
+                },
+                {
+                    "x": 300,
+                    "y": 500
+                },
+                {
+                    "x": 700,
+                    "y": 500
+                },
+                {
+                    "x": 350,
+                    "y": 300
+                }
+            ]
+        },
+        "vidas":{
+            "corazon": "assets/graphics/Apple.png",
+            "aspect_ratio": 2,
+            "frame_rate": 100,
+            "life_value":1
+        }
+    },
+    "stage_3": {
+        "stage" : {
+            "stage_background": "./assets/graphics/space_background_2.jpg",
+            "stage_music": "./assets/sounds/RacetoMars.mp3",
+            "stage_win": "assets/sounds/game_win.mp3",
+            "platform_floor": "./assets/graphics/piso_space.png",
+            "max_enemies_amount": 10,
+            "lifes_amount" : 3,
+            "timer": 100 
+        },
+        "platforms": [
+            {
+                "x": 0,
+                "y": 500,
+                "width": 800,
+                "height": 40
+            },
+            
+            {
+                "x": 200,
+                "y": 300,
+                "width": 240,
+                "height": 40
+            },
+            {
+                "x": 380,
+                "y": 300,
+                "width": 200,
+                "height": 40
+            },
+            {
+                "x": 380,
+                "y": 400,
+                "width": 400,
+                "height": 40
+            },
+            {
+                "x": 375,
+                "y": 100,
+                "width": 50,
+                "height": 40
+            },
+            {
+                "x": 100,
+                "y": 400,
+                "width": 100,
+                "height": 40
+            },
+            {
+                "x": 380,
+                "y": 200,
+                "width": 300,
+                "height": 40
+            }
+        ],
+        "spikes":[
+            {
+                "x": 360,
+                "y": 300
+            },
+            {
+                "x": 320,
+                "y": 300
+            }
+        ],
+        "player": {
+            "player_idle_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Idle_4.png",
+            "idle_cols": 4,
+            "idle_rows": 1,
+            "player_walk_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Walk_6.png",
+            "walk_cols": 6,
+            "walk_rows": 1,
+            "player_jump_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Jump_8.png",
+            "jump_cols": 8,
+            "jump_rows": 1,
+            "player_attack_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Attack2_6.png",
+            "attack_cols": 6,
+            "attack_rows": 1,
+            "player_death_animation": "./assets/graphics/Owlet_Monster/Owlet_Monster_Death_8.png",
+            "death_cols": 8,
+            "death_rows": 1,
+            "jump_power": 4,
+            "gravity": 2,
+            "walk_speed": 1,
+            "run_speed": 2,
+            "aspect_ratio" : 2,
+            "lifes": 3,
+            "frame_rate": 200,
+            "shoot_frames": 1000,
+            "fire_cooldown" : 600
+        },
+        "enemy":{
+            "enemy_walk_animation": "./assets/graphics/spaceman_Run.png",
+            "walk_cols": 12,
+            "walk_rows": 1,
+            "enemy_fall_animation": "./assets/graphics/spaceman_Fall.png",
+            "fall_cols": 1,
+            "fall_rows": 1,
+            "aspect_ratio" : 2,
+            "enemy_max_speed": 3,
+            "enemy_min_speed": 1,
+            "shoot_percentage": 5,
+            "frame_rate": 100,
+            "gravity": 3,
+            "puntaje": 1000
+        },
+        "objetos":{
+            "apple_animation": "./assets/graphics/Apple.png",
+            "animation_cols": 17,
+            "animation_rows": 1,
+            "aspect_ratio": 2,
+            "frame_rate": 100,
+            "puntaje": 100,
+            "coords":[
+                {
+                    "x": 140,
+                    "y": 500
+                },
+                {
+                    "x": 300,
+                    "y": 500
+                },
+                {
+                    "x": 350,
+                    "y": 300
+                }
+            ]
+        },
+        "vidas":{
+            "corazon": "assets/graphics/Apple.png",
+            "aspect_ratio": 2,
+            "frame_rate": 100,
+            "life_value":1
+        }
+    }
+}

@@ -2,6 +2,7 @@ import pygame
 import random
 from models.fireball import Fireball
 from auxiliar.utils import SurfaceManager as sf
+from models.explotion import Explotion
 from auxiliar.constantes import DEBUG,open_configs, GROUND
 import random
 
@@ -28,10 +29,10 @@ class Enemy(pygame.sprite.Sprite):
         
         #puntaje
         self.__score = puntaje
+        
         #hitbox
         self.__collition_rect = pygame.Rect(self.__rect.x + self.__rect.w//4 +6, (self.__rect.y + self.__rect.height), self.__rect.w//2 -6, 50)
         
-
         #Atributos de movimiento
         self.__walk_speed = walk_speed
         self.__max_constraint_w = constraint_w
@@ -73,7 +74,6 @@ class Enemy(pygame.sprite.Sprite):
         self.__rect.y += move_y
         self.__actual_animation = animation_list
         self.__initial_frame = 0
- 
     
     def do_animation(self, delta_ms):
         self.__player_animation_time += delta_ms   
@@ -89,9 +89,11 @@ class Enemy(pygame.sprite.Sprite):
         screen.blit(self.__actual_img_animation, self.__rect)
         self.__ground_collition_rect.midbottom = self.__rect.midbottom
         self.__collition_rect.midbottom = self.__rect.midbottom
-        # if DEBUG:
-        #     pygame.draw.rect(screen,((255,255,255)),self.__collition_rect)
-            
+        if DEBUG:
+            pygame.draw.rect(screen,((255,255,255)),self.__collition_rect)
+    
+    def explotion(self):
+        return pygame.sprite.GroupSingle(Explotion(self.__rect.center,(50,50)))
     
     def on_platform(self, lista_plataformas):
         self.__retorno = False

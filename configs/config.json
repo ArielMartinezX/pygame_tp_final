@@ -6,7 +6,7 @@
             "stage_music": "./assets/sounds/halloween.wav",
             "stage_win": "assets/sounds/game_win.mp3",
             "platform_floor": "./assets/graphics/piso_roca.png",
-            "max_enemies_amount": 3,
+            "max_enemies_amount": 1,
             "lifes_amount" : 3,
             "timer": 100 
         },
@@ -137,7 +137,7 @@
             "stage_music": "./assets/sounds/jungle.mp3",
             "stage_win": "./assets/sounds/game_win.mp3",
             "platform_floor": "./assets/graphics/piso.png",
-            "max_enemies_amount": 5,
+            "max_enemies_amount": 1,
             "lifes_amount" : 3,
             "timer": 100 
         },
@@ -280,7 +280,7 @@
             "stage_music": "./assets/sounds/RacetoMars.mp3",
             "stage_win": "assets/sounds/game_win.mp3",
             "platform_floor": "./assets/graphics/piso_space.png",
-            "max_enemies_amount": 10,
+            "max_enemies_amount": 1,
             "lifes_amount" : 3,
             "timer": 100 
         },

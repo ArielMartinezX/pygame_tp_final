@@ -1,6 +1,7 @@
 import pygame
 from auxiliar.utils import SurfaceManager as sf
 from models.fireball import Fireball
+from models.explotion import Explotion
 from auxiliar.constantes import *
 
 class Player(pygame.sprite.Sprite):
@@ -125,23 +126,16 @@ class Player(pygame.sprite.Sprite):
         else:
             self.__lifes = 0
 
+    def explotion(self):
+        return pygame.sprite.GroupSingle(Explotion(self.__rect.center,(30,30)))
+    
     def __set_x_animations_preset(self, move_x, animation_list: list[pygame.surface.Surface], look_r: bool):
         self.__rect.x += move_x
         self.__actual_animation = animation_list
         self.__is_looking_right = look_r
-
-    # def __set_y_animations_preset(self,move_y,move_x, animation_list: list[pygame.surface.Surface], look_r: bool):
-    #     self.__rect.y += self.saltar()
-    #     self.__rect.x += move_x
-    #     self.__rect.x += self.__run_speed if self.__is_looking_right else -self.__run_speed
-    #     self.__actual_animation = self.__jump_r if self.__is_looking_right else self.__jump_l
-    #     self.__initial_frame = 0
-    #     self.__is_jumping = True 
     
     def __set_y_animations_preset(self,move_y, frame: int):
         self.__rect.y -= move_y
-        #self.__rect.x += move_x
-        #self.__rect.x += self.__run_speed if self.__is_looking_right else -self.__run_speed
         self.__actual_animation = [self.__jump_r[frame]] if self.__is_looking_right else [self.__jump_l[frame]]
         self.__initial_frame = 0
         self.__is_jumping = True 
@@ -177,7 +171,7 @@ class Player(pygame.sprite.Sprite):
                     if event.key == pygame.K_SPACE and not self.__is_jumping and self.on_platform(lista_plataformas):
                         self.__is_jumping = True
                         self.__jump_sound.play()
-                        
+                
             keys = pygame.key.get_pressed()
             if keys[pygame.K_a]:
                 self.__is_right = False

@@ -6,6 +6,8 @@ from models.objetos import Objetos
 from models.plataformas import Platform
 from models.trampas import Trampas
 from models.lifes import Life
+from UI.GUI_button import *
+
 
 class Stage:
     def __init__(self, screen: pygame.surface.Surface, limit_h, limit_w, stage_name:str):
@@ -52,6 +54,10 @@ class Stage:
         self.lifes = pygame.sprite.Group()
         
         self.create_enemies()
+       
+        #explosiones
+        self.explotions = []
+        self.explotions_player = []
         
         #del json obtengo configuraciones del stage
         self.__stage_image = self.__stage_configs.get('stage_background')
@@ -83,6 +89,15 @@ class Stage:
         self.create_spikes()
         self.create_lifes()
         
+        # self.btn_back = Button(screen,400,300,500,330,50,50,(30,30,30),(35,35,35),
+        #                     self.btn_back_click,None,"<-",
+        #                     font="Comic Sans",font_size=15,font_color=(255,255,255))
+        
+        # self.lista_widgets = []
+        # self.lista_widgets.append(self.btn_back)
+        
+        self.__return_to_menu = False
+        
     @property
     def stage_image(self):
         return self.__background_image
@@ -92,6 +107,14 @@ class Stage:
     @property
     def player_lifes(self):
         return self.player.sprite.life
+    
+    @property
+    def return_to_menu(self):
+        return self.__return_to_menu
+    
+    def btn_back_click(self,texto):
+        print("ejecutando click en stage")
+        self.__return_to_menu = True
     
     def stage_cleared(self):
         if not self.enemies and not self.objets:
@@ -170,6 +193,9 @@ class Stage:
         for fireball in self.player.sprite.fireball_group:
             hits = pygame.sprite.spritecollide(fireball, self.enemies, True)
             if hits:
+                for enemy in hits:
+                    explosion = enemy.explotion()
+                    self.explotions.append(explosion.sprite)
                 self.player.sprite.new_score += sum(enemy.score for enemy in hits)
                 self.player.sprite.hit.play()
                 self.player.sprite.remove_fireball(fireball)  
@@ -181,6 +207,8 @@ class Stage:
             for fireball in enemy.fireball_group:
                 hits = pygame.sprite.spritecollide(fireball, self.player, False)
                 if hits:
+                    explosion_player = self.player.sprite.explotion()
+                    self.explotions_player.append(explosion_player.sprite)
                     if self.player.sprite.lifes > 0:
                         self.player.sprite.hit.play()
                     self.player.sprite.restar_vida()
@@ -212,6 +240,8 @@ class Stage:
     def run(self, delta_ms, lista_eventos):
         self.__tiempo_transcurrido += delta_ms
         if self.__tiempo_transcurrido >= 17:
+            # self.btn_back.render()
+            # self.btn_back.update(lista_eventos)
             self.plataformas()
             self.enemigos()
             self.objetos()
@@ -224,6 +254,12 @@ class Stage:
             self.player.update(self.__main_screen, delta_ms, self.__lista_plataformas, lista_eventos,
                             self.spikes_collitions(), self.enemy_body_collitions())
             self.player.sprite.draw(self.__main_screen)
+            for explosion in self.explotions:
+                explosion.update(self.__main_screen)
+                explosion.draw(self.__main_screen)
+            for explosion_player in self.explotions_player:
+                explosion_player.update(self.__main_screen)
+                explosion_player.draw(self.__main_screen)
             self.shoot_collisions()
             #print(self.player.sprite.score)
         else:

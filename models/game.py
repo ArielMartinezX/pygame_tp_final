@@ -57,8 +57,7 @@ class Game:
     def init_stage(self, screen, stage_name:str):
         self.__stage = Stage(screen, SCR_HEIGHT, SCR_WIDTH, stage_name)
         self.__current_stage = stage_name
-        
-        
+
     def reset_level_values(self):
         self.__is_current_level_ended = False
         self.__waiting_time = 7
@@ -76,6 +75,7 @@ class Game:
         self.__pause = True
         form_pause = FormPause(screen,100,100,600,400,(20, 20, 20),(10, 10, 10),
                     True)
+        
         while self.__pause:
             lista_eventos = []
             for event in pygame.event.get():
@@ -149,6 +149,7 @@ class Game:
                                 self.__music_loaded = False
                                 self.__stage_1_passed = True
                         elif self.__stage.game_over() or self.__timer <= 0:
+                            self.__timer = 0
                             self.__is_current_level_ended = True
                             if  self.__waiting_time <= 0:
                                 self.init_stage(screen,"stage_1")

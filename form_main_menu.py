@@ -101,22 +101,9 @@ class FormMain(Form):
             dic_score = self.get_data()
             print(dic_score)
             form_puntaje = FormRanking(self._master, 100, 25, 600,550,(220,0,220),
-                                     (255,255,255),True,"./UI/Recursos/Window.png",
-                                     dic_score,100,10,10)
+                                    (255,255,255),True,"./UI/Recursos/Window.png",
+                                    dic_score,100,10,110)
             self.show_dialog(form_puntaje)
-    
-    # def btn_tabla_click(self,texto):
-    #     print("hola")
-    #     dic_score = [{"jugador": "gio"},{"score": 1000},
-    #                 {"jugador": "fausto"},{"score": 900},
-    #                 {"jugador": "gonza"},{"score": 750}
-    #                 ]
-
-    #     form_puntaje = FormMenuScore(self._master, 100, 25, 600,550,(220,0,220),
-    #                                 (255,255,255),True,"./UI/Recursos/Window.png",
-    #                                 dic_score,100,10,10)
-
-    #     self.show_dialog(form_puntaje)
     
     def get_data(self):
         filas = get_lista()

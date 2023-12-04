@@ -19,17 +19,21 @@ class FormRanking(Form):
         
         self._margen_y = margen_y
         
-        lbl_jugador = Label(self._slave, x=margen_x + 10, y=20, w=w/2-margen_x-10,
-                    h=50, text="PLAYER",font="Verdana",
+        self.lbl_jugador = Label(self._slave, x=margen_x + 10, y=20, w=w/2-margen_x-10,
+                    h=50, text="PLAYER",font="Comic Sans",
                     font_size=30, font_color=(255,255,255),
                     path_image="./UI/Recursos/bar.png")
-        lbl_puntaje = Label(self._slave, x=margen_x + 10+w/2-margen_x-10, y=20, w=w/2-margen_x-10,
-                    h=50, text="SCORE",font="Verdana",
+        self.lbl_puntaje = Label(self._slave, x=margen_x + 10+w/2-margen_x-10, y=20, w=w/2-margen_x-10,
+                    h=50, text="SCORE",font="Comic Sans",
                     font_size=30, font_color=(255,255,255),
                     path_image="./UI/Recursos/bar.png")
+        self.btn_back = Button(self._slave,x,y,500,450,50,50,(30,30,30),(35,35,35),
+                            self.btn_back_click,None,"<-",
+                            font="Comic Sans",font_size=30,font_color=(255,255,255))
         
-        self.lista_widgets.append(lbl_jugador)
-        self.lista_widgets.append(lbl_puntaje)
+        self.lista_widgets.append(self.lbl_jugador)
+        self.lista_widgets.append(self.lbl_puntaje)
+        self.lista_widgets.append(self.btn_back)
         
         pos_inicial_y = margen_y
         
@@ -39,13 +43,15 @@ class FormRanking(Form):
                 cadena = ""
                 cadena = f"{s}"
                 jugador = Label(self._slave, pos_inicial_x, pos_inicial_y, w/2-margen_x,
-                            100, cadena, font="Verdana", font_size=30,font_color=(255,255,255),
+                            100, cadena.upper(), font="Comic Sans", font_size=30,font_color=(255,255,255),
                             path_image="./UI/Recursos/Table.png")
                 self.lista_widgets.append(jugador)
                 pos_inicial_x += w/2-margen_x
-            pos_inicial_y += 100+espacio
+            pos_inicial_y += espacio
             
-        
+    def btn_back_click(self,texto):
+        #self.end_dialog()
+        self.go_back()
         
     def update(self, lista_eventos):
         if self.active:
@@ -59,7 +65,7 @@ class FormRanking(Form):
     #     for fila in filas:
     #         fila_diccionario = {}
     #         for i in range(len(fila)):
-    #             columna_nombre = filas[0][i]  # Suponemos que la primera fila contiene los nombres de las columnas
+    #             columna_nombre = filas[0][i]  # Supongo que la primera fila contiene los nombres de las columnas
     #             valor = fila[i]
     #             fila_diccionario[columna_nombre] = valor
     #         resultado_diccionario.append(fila_diccionario)

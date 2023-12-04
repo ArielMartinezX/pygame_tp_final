@@ -7,7 +7,7 @@ from db_score.db import *
 pygame.init()
 screen = pygame.display.set_mode((800,600))
 clock = pygame.time.Clock()
-form_test = FormMain(screen, 100,100,600,400,(20, 20, 20),(10, 10, 10),
+form_main = FormMain(screen, 100,100,600,400,(20, 20, 20),(10, 10, 10),
                     5, True)
 
 crear_tabla()
@@ -21,9 +21,9 @@ while True:
             pygame.quit()
             sys.exit()
     # print(event)
-    # print(mouse_pos)
+    print(mouse_pos)
     screen.fill((0,0,0))
     
-    form_test.update(eventos)
+    form_main.update(eventos)
     
     pygame.display.update()

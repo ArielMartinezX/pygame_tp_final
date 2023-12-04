@@ -42,13 +42,18 @@ class FormPause(Form):
                             self.btn_quit_click,None,"X",
                             font="Comic Sans",font_size=15,font_color=(255,255,255))
         
+        # self.btn_back_level_menu = Button(self._slave,x,y,200,330,50,50,(30,30,30),(35,35,35),
+        #                     self.btn_back_level_menu_click,None,"<-",
+        #                     font="Comic Sans",font_size=15,font_color=(255,255,255))
+        
     
         self.lista_widgets.append(self.lbl_title)
         self.lista_widgets.append(self.label_volumen)
         self.lista_widgets.append(self.slider_volumen)
         self.lista_widgets.append(self.btn_music_state)
         self.lista_widgets.append(self.btn_quit)
-
+        # self.lista_widgets.append(self.btn_back_level_menu)
+        
         # pygame.mixer.music.load("./UI/Recursos/main_music.mp3")
         # pygame.mixer.music.set_volume(self.volumen)
         # pygame.mixer.music.play(-1)
@@ -76,7 +81,11 @@ class FormPause(Form):
         if self.flag_play:
             pygame.quit()
             sys.exit()
-            
+    
+    # def btn_back_level_menu_click(self,texto):
+    #     self.end_dialog()
+
+    
     def update(self, lista_eventos):
         if self.verificar_dialog_result():
             if self.active:

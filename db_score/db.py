@@ -29,7 +29,7 @@ def insertar_campos(player_name: str, player_score: int):
                 conexion.execute(sentencia, (player_score, player_name))
         except Exception as e:
             print("Error al insertar el campo.")
-                     
+
 
 def chequear_existencias(value:str):
     """Verifica si existe una posicion en la base de datos.

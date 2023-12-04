@@ -80,7 +80,7 @@ class TextBox(Widget):
                 caracter = evento.unicode
                 if evento.key == pygame.K_BACKSPACE:
                     self._text = self._text[:-1]
-                elif len(self._text) < 12:
+                elif len(self._text) < 12: #limite de caracteres en el textbox
                     if len(caracter) == 1 and unicodedata.category(caracter)[0] != 'C':
                         self._text += caracter
                 self.render()

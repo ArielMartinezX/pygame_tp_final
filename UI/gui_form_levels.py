@@ -34,6 +34,10 @@ class FormLevels(Form):
         self.btn_lvl_3 = Button(self._slave,x,y,400,150,100,100,(40,40,40),(35,35,35),
                             self.btn_lvl_3_click,None,"3",
                             font="Comic Sans",font_size=30,font_color=(255,255,255))
+        self.lbl_name_info = Label(self._slave, 100, 260, 400, 40,
+                            "WRITE YOUR NAME, PRESS ENTER", "Comic Sans",15,
+                            (255,255,255),"./UI/Recursos/Table.png")
+        
         self.txtbox_player_name = TextBox(self._slave,x,y,200,300, 200,50,
                             (220,220,220),(255,255,255),(255,255,255),(255,0,0),
                             2,font="Comic Sans", font_size=30, font_color=(0,0,0))
@@ -44,6 +48,7 @@ class FormLevels(Form):
         self.lista_widgets.append(self.btn_lvl_2)
         self.lista_widgets.append(self.btn_lvl_3)
         self.lista_widgets.append(self.txtbox_player_name)
+        self.lista_widgets.append(self.lbl_name_info)
         
         self.__game = Game()
         

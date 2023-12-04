@@ -21,7 +21,7 @@ while True:
             pygame.quit()
             sys.exit()
     # print(event)
-    print(mouse_pos)
+    # print(mouse_pos)
     screen.fill((0,0,0))
     
     form_main.update(eventos)

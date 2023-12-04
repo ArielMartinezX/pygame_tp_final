@@ -68,7 +68,6 @@ class Stage:
         #pantalla principal
         self.__main_screen = screen
         self.__tiempo_transcurrido = 0
-        #score
         
         #game over
         self.game_over_sound = False

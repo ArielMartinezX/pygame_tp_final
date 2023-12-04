@@ -66,6 +66,7 @@ class FormLevels(Form):
     
     def btn_lvl_1_click(self,texto):
         if self.__player_name:
+            self.__player_changed = False
             self.__game.run_game("stage_1", self.__player_name)
 
     def btn_lvl_2_click(self,texto): 
@@ -79,17 +80,23 @@ class FormLevels(Form):
     def txtbox_player_name_input(self):
         self.check_game_values_if_player_change(self.txtbox_player_name.get_text())
         self.__player_name = self.txtbox_player_name.get_text()
-        print(self.__player_name)
+        print("Ya setie el player name: " + self.__player_name)
+
     
     def check_game_values_if_player_change(self, text_input):
-        if self.__player_name != text_input:
+        print("este es el text input: " + text_input)
+        print(f"Este es el resultado de la comparacion: {self.__player_name != text_input}")
+        if self.__player_name and self.__player_name != text_input:
             self.__player_changed = True
+            print("Entro al if")
             
     def update(self, lista_eventos):
         if self.verificar_dialog_result():
             if self.active:
                 self.draw()
                 self.render()
+                print(f"cambio de personaje {self.__player_changed}")
+                
                 for widget in self.lista_widgets:
                     widget.update(lista_eventos)
                 for evento in lista_eventos:

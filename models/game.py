@@ -164,6 +164,7 @@ class Game:
                                 self.reset_level_values()
                                 self.__stage_2_passed = True
                         elif self.__stage.game_over() or self.__timer <= 0:
+                            self.__timer = 0
                             self.__is_current_level_ended = True
                             if  self.__waiting_time <= 0:
                                 self.init_stage(screen,"stage_2") 
@@ -181,6 +182,7 @@ class Game:
                                 self.restart_main_music()
                                 return True
                         elif self.__stage.game_over() or self.__timer <= 0:
+                            self.__timer = 0
                             self.__is_current_level_ended = True
                             if  self.__waiting_time <= 0:
                                 self.init_stage(screen,"stage_3") 

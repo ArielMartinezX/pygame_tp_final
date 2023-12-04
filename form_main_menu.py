@@ -107,12 +107,12 @@ class FormMain(Form):
     
     def get_data(self):
         filas = get_lista()
-        print(filas)
+        # print(filas)
         resultado_diccionario = []
         for fila in filas:
             fila_diccionario = {}
             for i in range(len(fila)):
-                columna_nombre = filas[0][i]  # Suponemos que la primera fila contiene los nombres de las columnas
+                columna_nombre = filas[0][i] 
                 valor = fila[i]
                 fila_diccionario[columna_nombre] = valor
             resultado_diccionario.append(fila_diccionario)
